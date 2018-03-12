@@ -1,0 +1,1342 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.jqueryui.min.js"></script>
+    <link href="index.css" rel="stylesheet" id="css">
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" id="jquery- css">
+    <link href="https://cdn.datatables.net/1.10.16/css/dataTables.jqueryui.min.css" rel="stylesheet" id="table-css">
+    <!------ Include the above in your HEAD tag ---------->
+</head>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+    crossorigin="anonymous">
+
+<body class="home">
+    <div class="container-fluid display-table">
+        <div class="row display-table-row">
+            <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
+                <div class="logo">
+                    <a hef="home.html">
+                        <img src="http://jskrishna.com/work/merkury/images/logo.png" alt="merkery_logo" class="hidden-xs hidden-sm">
+                        <img src="http://jskrishna.com/work/merkury/images/circle-logo.png" alt="merkery_logo" class="visible-xs visible-sm circle-logo">
+                    </a>
+                </div>
+                <div class="navi">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-home" aria-hidden="true"></i>
+                                <span class="hidden-xs hidden-sm">Generate Coupon</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-tasks" aria-hidden="true"></i>
+                                <span class="hidden-xs hidden-sm">Update</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                <span class="hidden-xs hidden-sm">Update Tariff</span>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="#">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span class="hidden-xs hidden-sm">History</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                <span class="hidden-xs hidden-sm">Users</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-cog" aria-hidden="true"></i>
+                                <span class="hidden-xs hidden-sm">Admin</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10 col-sm-11 display-table-cell v-align">
+                <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
+                <div class="row">
+                    <header>
+                        <div class="col-md-7">
+                            <nav class="navbar-default pull-left">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="offcanvas" data-target="#side-menu" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+                            </nav>
+                            <div class="search hidden-xs hidden-sm">
+                                <input type="text" placeholder="Search" id="search">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="header-rightside">
+                                <ul class="list-inline header-top pull-right">
+                                    <li class="hidden-xs">
+                                        <a href="#" class="add-project" data-toggle="modal" data-target="#add_project">Add Project</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="icon-info">
+                                            <i class="fa fa-bell" aria-hidden="true"></i>
+                                            <span class="label label-primary">3</span>
+                                        </a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <img src="http://jskrishna.com/work/merkury/images/user-pic.jpg" alt="user">
+                                            <b class="caret"></b>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <div class="navbar-content">
+                                                    <span>JS Krishna</span>
+                                                    <p class="text-muted small">
+                                                        me@jskrishna.com
+                                                    </p>
+                                                    <div class="divider">
+                                                    </div>
+                                                    <a href="#" class="view btn-sm active">View Profile</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </header>
+                </div>
+                <div class="user-dashboard">
+                    <div class="">
+                        <h1>History</h1>
+                        <table id="example" class="display" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Age</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input value="Tiger Nixon">
+                                    </td>
+                                    <td>
+                                        <input value="System Architect" />
+                                    </td>
+                                    <td>
+                                        <input value="Edinburgh" />
+                                    </td>
+                                    <td>
+                                        <input value="61" />
+                                    </td>
+                                    <td>
+                                        <input value="2011/04/25" />
+                                    </td>
+                                    <td>
+                                        <input value="$320,800" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Garrett Winters" />
+                                    </td>
+                                    <td>
+                                        <input value="Accountant" />
+                                    </td>
+                                    <td>
+                                        <input value="Tokyo" />
+                                    </td>
+                                    <td>
+                                        <input value="63" />
+                                    </td>
+                                    <td>
+                                        <input value="2011/07/25" />
+                                    </td>
+                                    <td>
+                                        <input value="$170,750" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Ashton Cox" />
+                                    </td>
+                                    <td>
+                                        <input value="Junior Technical Author" />
+                                    </td>
+                                    <td>
+                                        <input value="San Francisco" />
+                                    </td>
+                                    <td>
+                                        <input value="66" />
+                                    </td>
+                                    <td>
+                                        <input value="2009/01/12" />
+                                    </td>
+                                    <td>
+                                        <input value="$86,000" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Cedric Kelly" />
+                                    </td>
+                                    <td>
+                                        <input value="Senior Javascript Developer" />
+                                    </td>
+                                    <td>
+                                        <input value="Edinburgh" />
+                                    </td>
+                                    <td>
+                                        <input value="22" />
+                                    </td>
+                                    <td>
+                                        <input value="2012/03/29" />
+                                    </td>
+                                    <td>
+                                        <input value="$433,060" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Airi Satou" />
+                                    </td>
+                                    <td>
+                                        <input value="Accountant" />
+                                    </td>
+                                    <td>
+                                        <input value="Tokyo" />
+                                    </td>
+                                    <td>
+                                        <input value="33" />
+                                    </td>
+                                    <td>
+                                        <input value="2008/11/28" />
+                                    </td>
+                                    <td>
+                                        <input value="$162,700" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Brielle Williamson" />
+                                    </td>
+                                    <td>
+                                        <input value="Integration Specialist" />
+                                    </td>
+                                    <td>
+                                        <input value="New York" />
+                                    </td>
+                                    <td>
+                                        <input value="61" />
+                                    </td>
+                                    <td>
+                                        <input value="2012/12/02" />
+                                    </td>
+                                    <td>
+                                        <input value="$372,000" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Herrod Chandler" />
+                                    </td>
+                                    <td>
+                                        <input value="Sales Assistant" />
+                                    </td>
+                                    <td>
+                                        <input value="San Francisco" />
+                                    </td>
+                                    <td>
+                                        <input value="59" />
+                                    </td>
+                                    <td>
+                                        <input value="2012/08/06" />
+                                    </td>
+                                    <td>
+                                        <input value="$137,500" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Rhona Davidson" />
+                                    </td>
+                                    <td>
+                                        <input value="Integration Specialist" />
+                                    </td>
+                                    <td>
+                                        <input value="Tokyo" />
+                                    </td>
+                                    <td>
+                                        <input value="55" />
+                                    </td>
+                                    <td>
+                                        <input value="2010/10/14" />
+                                    </td>
+                                    <td>
+                                        <input value="$327,900" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Colleen Hurst" />
+                                    </td>
+                                    <td>
+                                        <input value="Javascript Developer" />
+                                    </td>
+                                    <td>
+                                        <input value="San Francisco" />
+                                    </td>
+                                    <td>
+                                        <input value="39" />
+                                    </td>
+                                    <td>
+                                        <input value="2009/09/15" />
+                                    </td>
+                                    <td>
+                                        <input value="$205,500" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Sonya Frost" />
+                                    </td>
+                                    <td>
+                                        <input value="Software Engineer" />
+                                    </td>
+                                    <td>
+                                        <input value="Edinburgh" />
+                                    </td>
+                                    <td>
+                                        <input value="23" />
+                                    </td>
+                                    <td>
+                                        <input value="2008/12/13" />
+                                    </td>
+                                    <td>
+                                        <input value="$103,600" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Jena Gaines" />
+                                    </td>
+                                    <td>
+                                        <input value="Office Manager" />
+                                    </td>
+                                    <td>
+                                        <input value="London" />
+                                    </td>
+                                    <td>
+                                        <input value="30" />
+                                    </td>
+                                    <td>
+                                        <input value="2008/12/19" />
+                                    </td>
+                                    <td>
+                                        <input value="$90,560" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Quinn Flynn" />
+                                    </td>
+                                    <td>
+                                        <input value="Support Lead" />
+                                    </td>
+                                    <td>
+                                        <input value="Edinburgh" />
+                                    </td>
+                                    <td>
+                                        <input value="22" />
+                                    </td>
+                                    <td>
+                                        <input value="2013/03/03" />
+                                    </td>
+                                    <td>
+                                        <input value="$342,000" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Charde Marshall" />
+                                    </td>
+                                    <td>
+                                        <input value="Regional Director" />
+                                    </td>
+                                    <td>
+                                        <input value="San Francisco" />
+                                    </td>
+                                    <td>
+                                        <input value="36" />
+                                    </td>
+                                    <td>
+                                        <input value="2008/10/16" />
+                                    </td>
+                                    <td>
+                                        <input value="$470,600" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Haley Kennedy" />
+                                    </td>
+                                    <td>
+                                        <input value="Senior Marketing Designer" />
+                                    </td>
+                                    <td>
+                                        <input value="London" />
+                                    </td>
+                                    <td>
+                                        <input value="43" />
+                                    </td>
+                                    <td>
+                                        <input value="2012/12/18" />
+                                    </td>
+                                    <td>
+                                        <input value="$313,500" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Tatyana Fitzpatrick" />
+                                    </td>
+                                    <td>
+                                        <input value="Regional Director" />
+                                    </td>
+                                    <td>
+                                        <input value="London" />
+                                    </td>
+                                    <td>
+                                        <input value="19" />
+                                    </td>
+                                    <td>
+                                        <input value="2010/03/17" />
+                                    </td>
+                                    <td>
+                                        <input value="$385,750" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Michael Silva" />
+                                    </td>
+                                    <td>
+                                        <input value="Marketing Designer" />
+                                    </td>
+                                    <td>
+                                        <input value="London" />
+                                    </td>
+                                    <td>
+                                        <input value="66" />
+                                    </td>
+                                    <td>
+                                        <input value="2012/11/27" />
+                                    </td>
+                                    <td>
+                                        <input value="$198,500" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Paul Byrd" />
+                                    </td>
+                                    <td>
+                                        <input value="Chief Financial Officer (CFO)" />
+                                    </td>
+                                    <td>
+                                        <input value="New York" />
+                                    </td>
+                                    <td>
+                                        <input value="64" />
+                                    </td>
+                                    <td>
+                                        <input value="2010/06/09" />
+                                    </td>
+                                    <td>
+                                        <input value="$725,000" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Gloria Little" />
+                                    </td>
+                                    <td>
+                                        <input value="Systems Administrator" />
+                                    </td>
+                                    <td>
+                                        <input value="New York" />
+                                    </td>
+                                    <td>
+                                        <input value="59" />
+                                    </td>
+                                    <td>
+                                        <input value="2009/04/10" />
+                                    </td>
+                                    <td>
+                                        <input value="$237,500" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Bradley Greer" />
+                                    </td>
+                                    <td>
+                                        <input value="Software Engineer" />
+                                    </td>
+                                    <td>
+                                        <input value="London" />
+                                    </td>
+                                    <td>
+                                        <input value="41" />
+                                    </td>
+                                    <td>
+                                        <input value="2012/10/13" />
+                                    </td>
+                                    <td>
+                                        <input value="$132,000" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Dai Rios" />
+                                    </td>
+                                    <td>
+                                        <input value="Personnel Lead" />
+                                    </td>
+                                    <td>
+                                        <input value="Edinburgh" />
+                                    </td>
+                                    <td>
+                                        <input value="35" />
+                                    </td>
+                                    <td>
+                                        <input value="2012/09/26" />
+                                    </td>
+                                    <td>
+                                        <input value="$217,500" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Jenette Caldwell" />
+                                    </td>
+                                    <td>
+                                        <input value="Development Lead" />
+                                    </td>
+                                    <td>
+                                        <input value="New York" />
+                                    </td>
+                                    <td>
+                                        <input value="30" />
+                                    </td>
+                                    <td>
+                                        <input value="2011/09/03" />
+                                    </td>
+                                    <td>
+                                        <input value="$345,000" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Yuri Berry" />
+                                    </td>
+                                    <td>
+                                        <input value="Chief Marketing Officer (CMO)" />
+                                    </td>
+                                    <td>
+                                        <input value="New York" />
+                                    </td>
+                                    <td>
+                                        <input value="40" />
+                                    </td>
+                                    <td>
+                                        <input value="2009/06/25" />
+                                    </td>
+                                    <td>
+                                        <input value="$675,000" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Caesar Vance" />
+                                    </td>
+                                    <td>
+                                        <input value="Pre-Sales Support" />
+                                    </td>
+                                    <td>
+                                        <input value="New York" />
+                                    </td>
+                                    <td>
+                                        <input value="21" />
+                                    </td>
+                                    <td>
+                                        <input value="2011/12/12" />
+                                    </td>
+                                    <td>
+                                        <input value="$106,450" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Doris Wilder" />
+                                    </td>
+                                    <td>
+                                        <input value="Sales Assistant" />
+                                    </td>
+                                    <td>
+                                        <input value="Sidney" />
+                                    </td>
+                                    <td>
+                                        <input value="23" />
+                                    </td>
+                                    <td>
+                                        <input value="2010/09/20" />
+                                    </td>
+                                    <td>
+                                        <input value="$85,600" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Angelica Ramos" />
+                                    </td>
+                                    <td>
+                                        <input value="Chief Executive Officer (CEO)" />
+                                    </td>
+                                    <td>
+                                        <input value="London" />
+                                    </td>
+                                    <td>
+                                        <input value="47" />
+                                    </td>
+                                    <td>
+                                        <input value="2009/10/09" />
+                                    </td>
+                                    <td>
+                                        <input value="$1,200,000" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Gavin Joyce" />
+                                    </td>
+                                    <td>
+                                        <input value="Developer" />
+                                    </td>
+                                    <td>
+                                        <input value="Edinburgh" />
+                                    </td>
+                                    <td>
+                                        <input value="42" />
+                                    </td>
+                                    <td>
+                                        <input value="2010/12/22" />
+                                    </td>
+                                    <td>
+                                        <input value="$92,575" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Jennifer Chang" />
+                                    </td>
+                                    <td>
+                                        <input value="Regional Director" />
+                                    </td>
+                                    <td>
+                                        <input value="Singapore" />
+                                    </td>
+                                    <td>
+                                        <input value="28" />
+                                    </td>
+                                    <td>
+                                        <input value="2010/11/14" />
+                                    </td>
+                                    <td>
+                                        <input value="$357,650" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Brenden Wagner" />
+                                    </td>
+                                    <td>
+                                        <input value="Software Engineer" />
+                                    </td>
+                                    <td>
+                                        <input value="San Francisco" />
+                                    </td>
+                                    <td>
+                                        <input value="28" />
+                                    </td>
+                                    <td>
+                                        <input value="2011/06/07" />
+                                    </td>
+                                    <td>
+                                        <input value="$206,850" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Fiona Green" />
+                                    </td>
+                                    <td>
+                                        <input value="Chief Operating Officer (COO)" />
+                                    </td>
+                                    <td>
+                                        <input value="San Francisco" />
+                                    </td>
+                                    <td>
+                                        <input value="48" />
+                                    </td>
+                                    <td>
+                                        <input value="2010/03/11" />
+                                    </td>
+                                    <td>
+                                        <input value="$850,000" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Shou Itou" />
+                                    </td>
+                                    <td>
+                                        <input value="Regional Marketing" />
+                                    </td>
+                                    <td>
+                                        <input value="Tokyo" />
+                                    </td>
+                                    <td>
+                                        <input value="20" />
+                                    </td>
+                                    <td>
+                                        <input value="2011/08/14" />
+                                    </td>
+                                    <td>
+                                        <input value="$163,000" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Michelle House" />
+                                    </td>
+                                    <td>
+                                        <input value="Integration Specialist" />
+                                    </td>
+                                    <td>
+                                        <input value="Sidney" />
+                                    </td>
+                                    <td>
+                                        <input value="37" />
+                                    </td>
+                                    <td>
+                                        <input value="2011/06/02" />
+                                    </td>
+                                    <td>
+                                        <input value="$95,400" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Suki Burks" />
+                                    </td>
+                                    <td>
+                                        <input value="Developer" />
+                                    </td>
+                                    <td>
+                                        <input value="London" />
+                                    </td>
+                                    <td>
+                                        <input value="53" />
+                                    </td>
+                                    <td>
+                                        <input value="2009/10/22" />
+                                    </td>
+                                    <td>
+                                        <input value="$114,500" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Prescott Bartlett" />
+                                    </td>
+                                    <td>
+                                        <input value="Technical Author" />
+                                    </td>
+                                    <td>
+                                        <input value="London" />
+                                    </td>
+                                    <td>
+                                        <input value="27" />
+                                    </td>
+                                    <td>
+                                        <input value="2011/05/07" />
+                                    </td>
+                                    <td>
+                                        <input value="$145,000" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Gavin Cortez" />
+                                    </td>
+                                    <td>
+                                        <input value="Team Leader" />
+                                    </td>
+                                    <td>
+                                        <input value="San Francisco" />
+                                    </td>
+                                    <td>
+                                        <input value="22" />
+                                    </td>
+                                    <td>
+                                        <input value="2008/10/26" />
+                                    </td>
+                                    <td>
+                                        <input value="$235,500" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Martena Mccray" />
+                                    </td>
+                                    <td>
+                                        <input value="Post-Sales support" />
+                                    </td>
+                                    <td>
+                                        <input value="Edinburgh" />
+                                    </td>
+                                    <td>
+                                        <input value="46" />
+                                    </td>
+                                    <td>
+                                        <input value="2011/03/09" />
+                                    </td>
+                                    <td>
+                                        <input value="$324,050" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Unity Butler" />
+                                    </td>
+                                    <td>
+                                        <input value="Marketing Designer" />
+                                    </td>
+                                    <td>
+                                        <input value="San Francisco" />
+                                    </td>
+                                    <td>
+                                        <input value="47" />
+                                    </td>
+                                    <td>
+                                        <input value="2009/12/09" />
+                                    </td>
+                                    <td>
+                                        <input value="$85,675" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Howard Hatfield" />
+                                    </td>
+                                    <td>
+                                        <input value="Office Manager" />
+                                    </td>
+                                    <td>
+                                        <input value="San Francisco" />
+                                    </td>
+                                    <td>
+                                        <input value="51" />
+                                    </td>
+                                    <td>
+                                        <input value="2008/12/16" />
+                                    </td>
+                                    <td>
+                                        <input value="$164,500" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Hope Fuentes" />
+                                    </td>
+                                    <td>
+                                        <input value="Secretary" />
+                                    </td>
+                                    <td>
+                                        <input value="San Francisco" />
+                                    </td>
+                                    <td>
+                                        <input value="41" />
+                                    </td>
+                                    <td>
+                                        <input value="2010/02/12" />
+                                    </td>
+                                    <td>
+                                        <input value="$109,850" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Vivian Harrell" />
+                                    </td>
+                                    <td>
+                                        <input value="Financial Controller" />
+                                    </td>
+                                    <td>
+                                        <input value="San Francisco" />
+                                    </td>
+                                    <td>
+                                        <input value="62" />
+                                    </td>
+                                    <td>
+                                        <input value="2009/02/14" />
+                                    </td>
+                                    <td>
+                                        <input value="$452,500" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Timothy Mooney" />
+                                    </td>
+                                    <td>
+                                        <input value="Office Manager" />
+                                    </td>
+                                    <td>
+                                        <input value="London" />
+                                    </td>
+                                    <td>
+                                        <input value="37" />
+                                    </td>
+                                    <td>
+                                        <input value="2008/12/11" />
+                                    </td>
+                                    <td>
+                                        <input value="$136,200" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Jackson Bradshaw" />
+                                    </td>
+                                    <td>
+                                        <input value="Director" />
+                                    </td>
+                                    <td>
+                                        <input value="New York" />
+                                    </td>
+                                    <td>
+                                        <input value="65" />
+                                    </td>
+                                    <td>
+                                        <input value="2008/09/26" />
+                                    </td>
+                                    <td>
+                                        <input value="$645,750" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Olivia Liang" />
+                                    </td>
+                                    <td>
+                                        <input value="Support Engineer" />
+                                    </td>
+                                    <td>
+                                        <input value="Singapore" />
+                                    </td>
+                                    <td>
+                                        <input value="64" />
+                                    </td>
+                                    <td>
+                                        <input value="2011/02/03" />
+                                    </td>
+                                    <td>
+                                        <input value="$234,500" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Bruno Nash" />
+                                    </td>
+                                    <td>
+                                        <input value="Software Engineer" />
+                                    </td>
+                                    <td>
+                                        <input value="London" />
+                                    </td>
+                                    <td>
+                                        <input value="38" />
+                                    </td>
+                                    <td>
+                                        <input value="2011/05/03" />
+                                    </td>
+                                    <td>
+                                        <input value="$163,500" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Sakura Yamamoto" />
+                                    </td>
+                                    <td>
+                                        <input value="Support Engineer" />
+                                    </td>
+                                    <td>
+                                        <input value="Tokyo" />
+                                    </td>
+                                    <td>
+                                        <input value="37" />
+                                    </td>
+                                    <td>
+                                        <input value="2009/08/19" />
+                                    </td>
+                                    <td>
+                                        <input value="$139,575" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Thor Walton" />
+                                    </td>
+                                    <td>
+                                        <input value="Developer" />
+                                    </td>
+                                    <td>
+                                        <input value="New York" />
+                                    </td>
+                                    <td>
+                                        <input value="61" />
+                                    </td>
+                                    <td>
+                                        <input value="2013/08/11" />
+                                    </td>
+                                    <td>
+                                        <input value="$98,540" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Finn Camacho" />
+                                    </td>
+                                    <td>
+                                        <input value="Support Engineer" />
+                                    </td>
+                                    <td>
+                                        <input value="San Francisco" />
+                                    </td>
+                                    <td>
+                                        <input value="47" />
+                                    </td>
+                                    <td>
+                                        <input value="2009/07/07" />
+                                    </td>
+                                    <td>
+                                        <input value="$87,500" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Serge Baldwin" />
+                                    </td>
+                                    <td>
+                                        <input value="Data Coordinator" />
+                                    </td>
+                                    <td>
+                                        <input value="Singapore" />
+                                    </td>
+                                    <td>
+                                        <input value="64" />
+                                    </td>
+                                    <td>
+                                        <input value="2012/04/09" />
+                                    </td>
+                                    <td>
+                                        <input value="$138,575" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Zenaida Frank" />
+                                    </td>
+                                    <td>
+                                        <input value="Software Engineer" />
+                                    </td>
+                                    <td>
+                                        <input value="New York" />
+                                    </td>
+                                    <td>
+                                        <input value="63" />
+                                    </td>
+                                    <td>
+                                        <input value="2010/01/04" />
+                                    </td>
+                                    <td>
+                                        <input value="$125,250" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Zorita Serrano" />
+                                    </td>
+                                    <td>
+                                        <input value="Software Engineer" />
+                                    </td>
+                                    <td>
+                                        <input value="San Francisco" />
+                                    </td>
+                                    <td>
+                                        <input value="56" />
+                                    </td>
+                                    <td>
+                                        <input value="2012/06/01" />
+                                    </td>
+                                    <td>
+                                        <input value="$115,000" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Jennifer Acosta" />
+                                    </td>
+                                    <td>
+                                        <input value="Junior Javascript Developer" />
+                                    </td>
+                                    <td>
+                                        <input value="Edinburgh" />
+                                    </td>
+                                    <td>
+                                        <input value="43" />
+                                    </td>
+                                    <td>
+                                        <input value="2013/02/01" />
+                                    </td>
+                                    <td>
+                                        <input value="$75,650" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Cara Stevens" />
+                                    </td>
+                                    <td>
+                                        <input value="Sales Assistant" />
+                                    </td>
+                                    <td>
+                                        <input value="New York" />
+                                    </td>
+                                    <td>
+                                        <input value="46" />
+                                    </td>
+                                    <td>
+                                        <input value="2011/12/06" />
+                                    </td>
+                                    <td>
+                                        <input value="$145,600" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Hermione Butler" />
+                                    </td>
+                                    <td>
+                                        <input value="Regional Director" />
+                                    </td>
+                                    <td>
+                                        <input value="London" />
+                                    </td>
+                                    <td>
+                                        <input value="47" />
+                                    </td>
+                                    <td>
+                                        <input value="2011/03/21" />
+                                    </td>
+                                    <td>
+                                        <input value="$356,250" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Lael Greer" />
+                                    </td>
+                                    <td>
+                                        <input value="Systems Administrator" />
+                                    </td>
+                                    <td>
+                                        <input value="London" />
+                                    </td>
+                                    <td>
+                                        <input value="21" />
+                                    </td>
+                                    <td>
+                                        <input value="2009/02/27" />
+                                    </td>
+                                    <td>
+                                        <input value="$103,500" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Jonas Alexander" />
+                                    </td>
+                                    <td>
+                                        <input value="Developer" />
+                                    </td>
+                                    <td>
+                                        <input value="San Francisco" />
+                                    </td>
+                                    <td>
+                                        <input value="30" />
+                                    </td>
+                                    <td>
+                                        <input value="2010/07/14" />
+                                    </td>
+                                    <td>
+                                        <input value="$86,500" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Shad Decker" />
+                                    </td>
+                                    <td>
+                                        <input value="Regional Director" />
+                                    </td>
+                                    <td>
+                                        <input value="Edinburgh" />
+                                    </td>
+                                    <td>
+                                        <input value="51" />
+                                    </td>
+                                    <td>
+                                        <input value="2008/11/13" />
+                                    </td>
+                                    <td>
+                                        <input value="$183,000" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Michael Bruce" />
+                                    </td>
+                                    <td>
+                                        <input value="Javascript Developer" />
+                                    </td>
+                                    <td>
+                                        <input value="Singapore" />
+                                    </td>
+                                    <td>
+                                        <input value="29" />
+                                    </td>
+                                    <td>
+                                        <input value="2011/06/27" />
+                                    </td>
+                                    <td>
+                                        <input value="$183,000" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input value="Donna Snider" />
+                                    </td>
+                                    <td>
+                                        <input value="Customer Support" />
+                                    </td>
+                                    <td>
+                                        <input value="New York" />
+                                    </td>
+                                    <td>
+                                        <input value="27" />
+                                    </td>
+                                    <td>
+                                        <input value="2011/01/25" />
+                                    </td>
+                                    <td>
+                                        <input value="$112,000" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- Modal -->
+    <div id="add_project" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header login-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Add Project</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" placeholder="Project Title" name="name">
+                    <input type="text" placeholder="Post of Post" name="mail">
+                    <input type="text" placeholder="Author" name="passsword">
+                    <textarea placeholder="Desicrption"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="cancel" data-dismiss="modal">Close</button>
+                    <button type="button" class="add-project" data-dismiss="modal">Save</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<script>$(document).ready(function () {
+        $('[data-toggle="offcanvas"]').click(function () {
+            $("#navigation").toggleClass("hidden-xs");
+        });
+    });
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+
+</html>
